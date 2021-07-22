@@ -553,10 +553,13 @@ body {
   display: flex;
 }
 
+.footer-form-label {
+  margin-right: 12px;
+}
+
 .footer-form-input {
   width: 358px;
   height: 50px;
-  margin-right: 12px;
   padding-left: 16px;
 
   font-size: 16px;
@@ -584,18 +587,15 @@ body {
 }
 
 .footer-form-btn {
-  position: relative;
-  padding-left: 29px;
-  padding-right: 62px;
+  display: flex;
+  align-items: center;
+  padding: 10px 28px;
 }
 
 .footer-form-icon {
-  position: absolute;
-  right: 28px;
-  top: 50%;
-  transform: translateY(-50%);
   width: 24px;
   height: 24px;
+  margin-left: 10px;
   fill: var(--tertiary-color);
 }
 
@@ -619,7 +619,6 @@ body {
   left: 50%;
   top: 50%;
   width: 528px;
-  height: 581px;
   padding: 40px;
 
   background-color: var(--tertiary-color);
@@ -656,17 +655,18 @@ body {
   width: 18px;
   height: 18px;
   fill: var(--quaternary-color);
+  transition: fill var(--transition-duration) var(--transition-timing-function);
+}
+
+.close-btn:hover .close-btn-icon,
+.close-btn:focus .close-btn-icon {
+  fill: var(--accent-color);
 }
 
 .is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-}
-
-.modal-form {
-  display: flex;
-  flex-direction: column;
 }
 
 .modal-form-head {
@@ -680,6 +680,7 @@ body {
 }
 
 .modal-form-label {
+  display: block;
   margin-bottom: 10px;
 
   font-size: 12px;
@@ -758,6 +759,7 @@ body {
 .modal-form-label-checkbox {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 30px;
 
   line-height: 1.71;
@@ -776,17 +778,28 @@ body {
   width: 16px;
   height: 15px;
   margin-right: 7px;
-  background-image: url(../images/checkbox/check.svg);
+  border: 2px solid var(--primary-color);
+  border-radius: 2px;
   cursor: pointer;
+  transition: border-color var(--transition-duration) var(--transition-timing-function);
+}
+
+.modal-form-checkbox:focus + .modal-form-label-checkbox::before {
+  border-color: var(--accent-color);
 }
 
 .modal-form-checkbox:checked + .modal-form-label-checkbox::before {
+  border: none;
   background-image: url(../images/checkbox/active-check.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .modal-form-btn {
+  display: block;
   padding: 10px 55px;
-  align-self: center;
+  margin: 0 auto;
 }
 /* ======= END MODAL FORM ======= */
 /* ======= END WEB STUDIO ======= */
